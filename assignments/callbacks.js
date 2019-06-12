@@ -77,10 +77,19 @@ console.log(contains('Pencil', items, function(maybe) {
 }))
 
 /* STRETCH PROBLEM */
+let jobs = ["Fashion Designer", "Web Developer", "Web Designer", "Fashion Designer", "Web Developer"];
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  // newArr = array.filter()
+  let newArr = [];
+  newArr = array.filter(function(item, index) {
+    return array.indexOf(item) >= index;
+  });
+  return cb(newArr);
 }
+removeDuplicates(jobs, function(removal) {
+  console.log(removal);
+  return (removal);
+});
